@@ -108,7 +108,7 @@ const BasicTable = ({ data, columns }) => {
           <strong>
             {table.getState().pagination.pageIndex + 1} 
           </strong>
-          of{" "}
+          {" "}of{" "}
           <strong>
             {table.getPageCount()}
           </strong>
