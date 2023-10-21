@@ -26,7 +26,7 @@ const BasicTable = ({ data, columns }) => {
   const [filtering, setFiltering] = useState("");
 
   /** @type import('@tanstack/react-table').ColumnDef<any>*/
- 
+
   const table = useReactTable({
     data,
     columns,
@@ -103,6 +103,15 @@ const BasicTable = ({ data, columns }) => {
           onClick={() => table.previousPage()}
         >
           PREV PAGE
+        </button>
+        <button>
+          <strong>
+            {table.getState().pagination.pageIndex + 1} 
+          </strong>
+          of{" "}
+          <strong>
+            {table.getPageCount()}
+          </strong>
         </button>
         <button
           disabled={!table.getCanNextPage()}
